@@ -1,6 +1,2 @@
 #!/bin/bash
-
-# Use awk to print the username (field 1) and home directory (field 6) from /etc/passwd
-# Sort the output by username (field 1)
-awk -F: '{ print $1, $6 }' /etc/passwd | sort -k1
-
+cut -d ':' -f1,6 /etc/passwd | sort -k1

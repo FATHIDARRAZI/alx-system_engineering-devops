@@ -1,20 +1,2 @@
 #!/bin/bash
-
-# Ask the user for input
-echo "Enter text to encode/decode using rot13: "
-read input
-
-# Ask the user whether to encode or decode the input
-echo "Would you like to encode or decode the input? (e/d)"
-read mode
-
-# Apply the rot13 transformation using the tr command
-if [[ "$mode" == "e" ]]; then
-    output=$(echo "$input" | tr 'A-Za-z' 'N-ZA-Mn-za-m')
-    echo "Encoded text: $output"
-elif [[ "$mode" == "d" ]]; then
-    output=$(echo "$input" | tr 'A-Za-z' 'N-ZA-Mn-za-m')
-    echo "Decoded text: $output"
-else
-    echo "Invalid mode selected. Please enter 'e' or 'd'."
-fi
+tr 'A-Za-z' 'N-ZA-Mn-za-m'

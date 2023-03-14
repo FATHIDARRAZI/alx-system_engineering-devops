@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -depth -name '*.*' -prune -o -empty -printf '%f\n' -o -type d -empty -printf '%f/\n' | sed '/^$/d;$a\\'
+find . -type f -empty -printf '%f\n' -o -type d -empty -printf '%f/\n' | sed '/^\s*$/d; $a\'
